@@ -2,8 +2,7 @@ backend:
   name: github
   repo: mozzdevv/mozzdevv.github.io
   branch: main
-  auth_type: pkce
-  app_id: Ov23lizAi2QusfemcvnJ
+  site_domain: loquacious-pony-37dc56.netlify.app
 
 media_folder: "public/images"
 public_folder: "/images"
