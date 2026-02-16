@@ -17,12 +17,12 @@
     },
     {
       "id": "skills",
-      "enabled": true,
+      "enabled": false,
       "order": 3
     },
     {
       "id": "experience",
-      "enabled": true,
+      "enabled": false,
       "order": 4
     },
     {
