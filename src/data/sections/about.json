@@ -1,29 +1,29 @@
 {
-    "sectionTitle": "About Me",
-    "bio": "Seasoned Sr. Project Manager with 10+ years delivering complex digital projects for Microsoft, Morgan Stanley, Allergan, and government clients. Proven track record building PMO operations from scratch, managing distributed teams across 5 time zones, and delivering on-time, on-budget results.",
-    "highlights": [
-        {
-            "label": "Location",
-            "value": "Toronto, Ontario"
-        },
-        {
-            "label": "Experience",
-            "value": "2013 - 2026"
-        },
-        {
-            "label": "Email",
-            "value": "mazin@example.com"
-        }
-    ],
-    "differentiatorLabel": "Unique Differentiator",
-    "differentiatorText": "Active hands-on expertise in AI multi-agent systems, generative AI integration, RAG models, and production-ready AI application development.",
-    "education": [
-        {
-            "institution": "University of Toronto",
-            "degrees": [
-                "Digital Strategy & Communications Management Cert.",
-                "Bachelor of Arts (Honours), Sociology & Philosophy."
-            ]
-        }
-    ]
+  "sectionTitle": "About Me",
+  "bio": "Seasoned Sr. Project Manager with 10+ years delivering complex digital projects for Microsoft, Morgan Stanley, Allergan, and government clients. Proven track record building PMO operations from scratch, managing distributed teams across 5 time zones, and delivering on-time, on-budget results.",
+  "highlights": [
+    {
+      "label": "Location",
+      "value": "Toronto, Ontario"
+    },
+    {
+      "label": "Experience",
+      "value": "13+ Years"
+    },
+    {
+      "label": "Email",
+      "value": "mazosmann@gmail.com"
+    }
+  ],
+  "differentiatorLabel": "Unique Differentiator",
+  "differentiatorText": "Active hands-on expertise in AI multi-agent systems, generative AI integration, RAG models, and production-ready AI application development.",
+  "education": [
+    {
+      "institution": "University of Toronto",
+      "degrees": [
+        "Digital Strategy & Communications Management Cert.",
+        "Bachelor of Arts (Honours), Sociology & Philosophy."
+      ]
+    }
+  ]
 }
