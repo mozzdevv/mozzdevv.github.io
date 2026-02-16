@@ -1,12 +1,7 @@
 {
-    "brandName": "Mazin Osman",
-    "brandUrl": "/",
-    "navLinks": [
-        {
-            "title": "Portfolio",
-            "href": "/"
-        }
-    ],
-    "githubUrl": "https://github.com/mozzdevv/mozzdevv.github.io",
-    "showGithub": true
+  "brandName": "mozzdevv's corner",
+  "brandUrl": "/",
+  "navLinks": [],
+  "githubUrl": "https://github.com/mozzdevv",
+  "showGithub": true
 }
