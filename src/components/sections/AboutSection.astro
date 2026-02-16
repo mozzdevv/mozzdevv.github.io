@@ -15,10 +15,10 @@ import aboutData from "@/data/sections/about.json";
           {aboutData.bio}
         </p>
 
-        {aboutData.differentiatorText && (
+        {aboutData.additionaltext && (
           <div class="rounded-lg border border-primary/20 bg-primary/5 p-4">
-            <p class="text-sm font-semibold text-primary mb-1">{aboutData.differentiatorLabel}</p>
-            <p class="text-sm text-foreground">{aboutData.differentiatorText}</p>
+            <p class="text-sm font-semibold text-primary mb-1">{aboutData.additionaltextlabel}</p>
+            <p class="text-sm text-foreground">{aboutData.additionaltext}</p>
           </div>
         )}
       </div>
@@ -26,7 +26,7 @@ import aboutData from "@/data/sections/about.json";
       <!-- Info Card -->
       <div class="space-y-6">
         <div class="rounded-xl border border-border bg-card p-6 shadow-sm">
-          <h3 class="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-4">Details</h3>
+          <h3 class="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-4">INFO BITS</h3>
           <dl class="space-y-3">
             {aboutData.highlights.map((item: { label: string; value: string }) => (
               <div>

@@ -123,8 +123,8 @@ collections:
             fields:
               - { label: "Label", name: "label", widget: "string" }
               - { label: "Value", name: "value", widget: "string" }
-          - { label: "Differentiator Label", name: "differentiatorLabel", widget: "string", required: false }
-          - { label: "Differentiator Text", name: "differentiatorText", widget: "text", required: false }
+          - { label: "Additional Text Label", name: "additionaltextlabel", widget: "string", required: false }
+          - { label: "Additional Text", name: "additionaltext", widget: "text", required: false }
           - label: "Education"
             name: "education"
             widget: "list"
