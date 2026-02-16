@@ -1,6 +1,6 @@
 {
-    "primaryColor": "emerald",
-    "font": "geist",
-    "radius": "large",
-    "defaultMode": "light"
+  "primaryColor": "zinc",
+  "font": "geist",
+  "radius": "large",
+  "defaultMode": "light"
 }
