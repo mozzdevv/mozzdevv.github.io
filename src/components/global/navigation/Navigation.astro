@@ -4,7 +4,7 @@ import Logo from "@/components/assets/Logo.astro";
 // Foundations
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
 // Components
-import DocsSearch from "@/components/docs/DocsSearch.astro";
+
 import ThemeToggle from "@/components/fundations/elements/ThemeToggle.astro";
 import LogoContextMenu from "@/components/global/LogoContextMenu.astro";
 // Icons
@@ -15,7 +15,6 @@ export interface Props {
 }
 const { variant = "default" } = Astro.props;
 const navLinks = [
-  { title: "Docs", href: "/docs" },
   {
     title: "Astro themes",
     href: "https://lexingtonthemes.com/",
@@ -23,7 +22,8 @@ const navLinks = [
   },
 ];
 // GitHub repo info
-const githubRepo = "michael-andreuzza/bearnie";
+// GitHub repo info
+const githubRepo = "mozzdevv/mozzdevv.github.io";
 ---
 
 {
@@ -62,12 +62,12 @@ const githubRepo = "michael-andreuzza/bearnie";
                 <Github class="size-3.5" />
                 <span id="github-stars-docs" class="tabular-nums" />
               </a>
-              <DocsSearch />
+
               <ThemeToggle size="xs" />
             </div>
           </div>
           <div class="flex items-center gap-1 md:hidden">
-            <DocsSearch />
+
             <a
               href={`https://github.com/${githubRepo}`}
               target="_blank"
