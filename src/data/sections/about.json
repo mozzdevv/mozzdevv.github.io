@@ -5,25 +5,9 @@
     {
       "label": "Location",
       "value": "Toronto, Ontario"
-    },
-    {
-      "label": "Experience",
-      "value": "13+ Years"
-    },
-    {
-      "label": "Email",
-      "value": "mazosmann@gmail.com"
     }
   ],
-  "differentiatorLabel": "Unique Differentiator",
-  "differentiatorText": "Active hands-on expertise in AI multi-agent systems, generative AI integration, RAG models, and production-ready AI application development.",
-  "education": [
-    {
-      "institution": "University of Toronto",
-      "degrees": [
-        "Digital Strategy & Communications Management Cert.",
-        "Bachelor of Arts (Honours), Sociology & Philosophy."
-      ]
-    }
-  ]
+  "differentiatorLabel": "[placeholder]",
+  "differentiatorText": "[placeholder]",
+  "education": []
 }
