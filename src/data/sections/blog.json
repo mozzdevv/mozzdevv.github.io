@@ -1,0 +1,28 @@
+{
+    "sectionTitle": "Writings",
+    "description": "Thoughts on project management, AI, and digital transformation.",
+    "posts": [
+        {
+            "title": "Building PMO Operations from Scratch",
+            "excerpt": "Lessons learned from establishing Agile PMO frameworks for enterprise digital transformation teams.",
+            "date": "2026-02-15",
+            "tags": [
+                "Project Management",
+                "Agile"
+            ],
+            "slug": "building-pmo-operations",
+            "published": true
+        },
+        {
+            "title": "The Future of AI in Project Management",
+            "excerpt": "How multi-agent AI systems are reshaping how we plan, execute, and deliver complex digital projects.",
+            "date": "2026-02-10",
+            "tags": [
+                "AI",
+                "Project Management"
+            ],
+            "slug": "ai-in-project-management",
+            "published": true
+        }
+    ]
+}

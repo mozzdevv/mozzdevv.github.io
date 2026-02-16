@@ -26,14 +26,19 @@
             "order": 5
         },
         {
+            "id": "blog",
+            "enabled": true,
+            "order": 6
+        },
+        {
             "id": "testimonials",
             "enabled": false,
-            "order": 6
+            "order": 7
         },
         {
             "id": "contact",
             "enabled": true,
-            "order": 7
+            "order": 8
         }
     ]
 }

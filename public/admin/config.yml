@@ -53,6 +53,21 @@ collections:
               - { label: "Light", value: "light" }
               - { label: "Dark", value: "dark" }
 
+      - name: "header"
+        label: "Header / Navigation"
+        file: "src/data/header.json"
+        fields:
+          - { label: "Brand Name", name: "brandName", widget: "string" }
+          - { label: "Brand URL", name: "brandUrl", widget: "string", default: "/" }
+          - label: "Nav Links"
+            name: "navLinks"
+            widget: "list"
+            fields:
+              - { label: "Link Text", name: "title", widget: "string" }
+              - { label: "Link URL", name: "href", widget: "string" }
+          - { label: "GitHub URL", name: "githubUrl", widget: "string", required: false }
+          - { label: "Show GitHub Icon", name: "showGithub", widget: "boolean", default: true }
+
       - name: "page-config"
         label: "Page Layout"
         file: "src/data/sections/page-config.json"
@@ -70,6 +85,7 @@ collections:
                   - { label: "Skills", value: "skills" }
                   - { label: "Experience", value: "experience" }
                   - { label: "Projects", value: "projects" }
+                  - { label: "Blog / Writings", value: "blog" }
                   - { label: "Testimonials", value: "testimonials" }
                   - { label: "Contact", value: "contact" }
               - { label: "Enabled", name: "enabled", widget: "boolean", default: true }
@@ -184,6 +200,26 @@ collections:
               - { label: "Name", name: "name", widget: "string" }
               - { label: "Role", name: "role", widget: "string" }
               - { label: "Avatar", name: "avatar", widget: "image", required: false }
+
+      - name: "blog"
+        label: "Blog / Writings"
+        file: "src/data/sections/blog.json"
+        fields:
+          - { label: "Section Title", name: "sectionTitle", widget: "string" }
+          - { label: "Description", name: "description", widget: "text", required: false }
+          - label: "Posts"
+            name: "posts"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Excerpt", name: "excerpt", widget: "text" }
+              - { label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+              - label: "Tags"
+                name: "tags"
+                widget: "list"
+                field: { label: "Tag", name: "tag", widget: "string" }
+              - { label: "Slug", name: "slug", widget: "string" }
+              - { label: "Published", name: "published", widget: "boolean", default: true }
 
       - name: "contact"
         label: "Contact"

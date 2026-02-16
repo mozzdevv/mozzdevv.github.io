@@ -1,6 +1,4 @@
 ---
-// Assets
-import Logo from "@/components/assets/Logo.astro";
 // Foundations
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
 // Components
@@ -8,28 +6,26 @@ import ThemeToggle from "@/components/fundations/elements/ThemeToggle.astro";
 import LogoContextMenu from "@/components/global/LogoContextMenu.astro";
 // Icons
 import Github from "@lucide/astro/icons/github";
+// Data
+import headerData from "@/data/header.json";
+
 export interface Props {
   variant?: "default" | "docs";
 }
 const { variant = "default" } = Astro.props;
-const navLinks = [
-  { title: "Portfolio", href: "/" },
-];
-// GitHub repo info
-const githubRepo = "mozzdevv/mozzdevv.github.io";
 ---
 
 <header class="sticky top-0 z-50 w-full bg-background">
   <Wrapper variant="standard">
     <div class="mx-auto flex py-4 items-center justify-between">
       <LogoContextMenu>
-        <a href="/" class="font-semibold flex items-center gap-2">
-          Mazin Osman
+        <a href={headerData.brandUrl || "/"} class="font-semibold flex items-center gap-2">
+          {headerData.brandName}
         </a>
       </LogoContextMenu>
       <div class="flex items-center gap-4">
         <nav class="flex items-center gap-6 text-sm">
-          {navLinks.map((link) => (
+          {headerData.navLinks.map((link: { title: string; href: string }) => (
             <a
               href={link.href}
               class="text-muted-foreground hover:text-foreground transition-colors"
@@ -38,15 +34,17 @@ const githubRepo = "mozzdevv/mozzdevv.github.io";
             </a>
           ))}
         </nav>
-        <a
-          href={`https://github.com/${githubRepo}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center justify-center size-7 text-muted-foreground hover:text-foreground transition-colors"
-          aria-label="GitHub"
-        >
-          <Github class="size-4" />
-        </a>
+        {headerData.showGithub && headerData.githubUrl && (
+          <a
+            href={headerData.githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center size-7 text-muted-foreground hover:text-foreground transition-colors"
+            aria-label="GitHub"
+          >
+            <Github class="size-4" />
+          </a>
+        )}
         <ThemeToggle size="xs" />
       </div>
     </div>
