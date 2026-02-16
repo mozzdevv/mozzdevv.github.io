@@ -3,6 +3,8 @@ import "@/styles/global.css";
 import BaseHead from "@/components/fundations/head/BaseHead.astro";
 import Navigation from "@/components/global/navigation/Navigation.astro";
 import Footer from "@/components/global/Footer.astro";
+import themeData from "@/data/theme.json";
+import { colorPresets, fontPresets, fontUrls, radiusPresets } from "@/config/themes";
 
 export interface Props {
   showFooter?: boolean;
@@ -17,13 +19,41 @@ const {
   structuredData,
   bodyClass = "bg-background",
 } = Astro.props;
+
+// Resolve theme values
+const colors = colorPresets[themeData.primaryColor] || colorPresets.emerald;
+const fontFamily = fontPresets[themeData.font] || fontPresets.geist;
+const fontUrl = fontUrls[themeData.font] || "";
+const radius = radiusPresets[themeData.radius] || radiusPresets.medium;
+const isDark = themeData.defaultMode === "dark";
+
+// Build CSS overrides for the selected theme
+const lightOverrides = Object.entries(colors.light)
+  .map(([k, v]) => `${k}: ${v};`)
+  .join("\n  ");
+const darkOverrides = Object.entries(colors.dark)
+  .map(([k, v]) => `${k}: ${v};`)
+  .join("\n  ");
+
+const themeCSS = `
+:root {
+  --radius: ${radius};
+  --font-sans: ${fontFamily};
+  ${lightOverrides}
+}
+.dark {
+  ${darkOverrides}
+}
+`;
 ---
 
-<html lang="en" class="scroll-smooth scrollbar-hide">
+<html lang="en" class={`scroll-smooth scrollbar-hide ${isDark ? 'dark' : ''}`}>
   <head>
     <BaseHead structuredData={structuredData}>
       <slot name="head" />
     </BaseHead>
+    {fontUrl && <link rel="stylesheet" href={fontUrl} />}
+    <style set:html={themeCSS}></style>
   </head>
   <body class={`${bodyClass} text-foreground antialiased flex flex-col min-h-svh`}>
     {showNavigation !== false && <Navigation />}

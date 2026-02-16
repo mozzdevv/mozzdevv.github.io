@@ -1,0 +1,73 @@
+{
+    "sectionTitle": "Skills & Expertise",
+    "categories": [
+        {
+            "name": "Project Management",
+            "skills": [
+                {
+                    "name": "JIRA / Azure DevOps",
+                    "level": 95
+                },
+                {
+                    "name": "Agile / Scrum",
+                    "level": 90
+                },
+                {
+                    "name": "PMO Governance",
+                    "level": 95
+                }
+            ]
+        },
+        {
+            "name": "Technical",
+            "skills": [
+                {
+                    "name": "HTML5 / CSS",
+                    "level": 85
+                },
+                {
+                    "name": "React / .NET",
+                    "level": 75
+                },
+                {
+                    "name": "SQL / MySQL",
+                    "level": 80
+                },
+                {
+                    "name": "AI Multi-Agent Systems",
+                    "level": 85
+                }
+            ]
+        },
+        {
+            "name": "Analytics & CMS",
+            "skills": [
+                {
+                    "name": "Power BI",
+                    "level": 90
+                },
+                {
+                    "name": "Google Analytics 4",
+                    "level": 85
+                },
+                {
+                    "name": "Salesforce (SFMC)",
+                    "level": 80
+                },
+                {
+                    "name": "AEM / Sitecore",
+                    "level": 85
+                }
+            ]
+        },
+        {
+            "name": "Design",
+            "skills": [
+                {
+                    "name": "Figma / Sketch",
+                    "level": 80
+                }
+            ]
+        }
+    ]
+}

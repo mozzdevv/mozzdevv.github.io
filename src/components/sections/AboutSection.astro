@@ -1,0 +1,56 @@
+---
+import aboutData from "@/data/sections/about.json";
+---
+
+<section id="about" class="py-20 sm:py-24">
+  <div class="mx-auto max-w-4xl px-6 lg:px-8">
+    <h2 class="text-3xl font-bold tracking-tight sm:text-4xl text-foreground mb-12">
+      {aboutData.sectionTitle}
+    </h2>
+
+    <div class="grid gap-8 lg:grid-cols-3">
+      <!-- Bio -->
+      <div class="lg:col-span-2 space-y-6">
+        <p class="text-lg leading-relaxed text-muted-foreground">
+          {aboutData.bio}
+        </p>
+
+        {aboutData.differentiatorText && (
+          <div class="rounded-lg border border-primary/20 bg-primary/5 p-4">
+            <p class="text-sm font-semibold text-primary mb-1">{aboutData.differentiatorLabel}</p>
+            <p class="text-sm text-foreground">{aboutData.differentiatorText}</p>
+          </div>
+        )}
+      </div>
+
+      <!-- Info Card -->
+      <div class="space-y-6">
+        <div class="rounded-xl border border-border bg-card p-6 shadow-sm">
+          <h3 class="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-4">Details</h3>
+          <dl class="space-y-3">
+            {aboutData.highlights.map((item: { label: string; value: string }) => (
+              <div>
+                <dt class="text-xs font-medium text-muted-foreground">{item.label}</dt>
+                <dd class="text-sm font-medium text-foreground">{item.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+
+        {aboutData.education && aboutData.education.length > 0 && (
+          <div class="rounded-xl border border-border bg-card p-6 shadow-sm">
+            <h3 class="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-4">Education</h3>
+            {aboutData.education.map((edu: { institution: string; degrees: string[] }) => (
+              <div class="space-y-1">
+                <p class="text-sm font-semibold text-foreground">{edu.institution}</p>
+                {edu.degrees.map((degree: string) => (
+                  <p class="text-xs text-muted-foreground">{degree}</p>
+                ))}
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  </div>
+</section>

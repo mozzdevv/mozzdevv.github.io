@@ -1,0 +1,36 @@
+---
+import Badge from "@/components/ui/badge/Badge.astro";
+import skillsData from "@/data/sections/skills.json";
+---
+
+<section id="skills" class="py-20 sm:py-24 bg-muted/30">
+  <div class="mx-auto max-w-4xl px-6 lg:px-8">
+    <h2 class="text-3xl font-bold tracking-tight sm:text-4xl text-foreground mb-12">
+      {skillsData.sectionTitle}
+    </h2>
+
+    <div class="grid gap-8 sm:grid-cols-2">
+      {skillsData.categories.map((category: { name: string; skills: { name: string; level: number }[] }) => (
+        <div class="rounded-xl border border-border bg-card p-6 shadow-sm">
+          <h3 class="text-lg font-semibold text-foreground mb-4">{category.name}</h3>
+          <div class="space-y-4">
+            {category.skills.map((skill: { name: string; level: number }) => (
+              <div>
+                <div class="flex items-center justify-between mb-1.5">
+                  <span class="text-sm font-medium text-foreground">{skill.name}</span>
+                  <Badge variant="outline" class="text-xs">{skill.level}%</Badge>
+                </div>
+                <div class="h-2 w-full rounded-full bg-secondary">
+                  <div
+                    class="h-2 rounded-full bg-primary transition-all duration-500"
+                    style={`width: ${skill.level}%`}
+                  ></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

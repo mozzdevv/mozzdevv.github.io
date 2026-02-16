@@ -8,32 +8,107 @@ media_folder: "public/images"
 public_folder: "/images"
 
 collections:
-  - name: "portfolio"
-    label: "Portfolio Data"
+  # ──────────────────────────────
+  # Theme Settings
+  # ──────────────────────────────
+  - name: "settings"
+    label: "⚙️ Settings"
     files:
-      - name: "profile"
-        label: "Profile & Contact"
-        file: "src/data/profile.json"
+      - name: "theme"
+        label: "Theme"
+        file: "src/data/theme.json"
         fields:
-          - { label: "Name", name: "name", widget: "string" }
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Years Active", name: "years", widget: "string" }
-          - { label: "Location", name: "location", widget: "string" }
-          - { label: "Email", name: "email", widget: "string" }
-          - { label: "GitHub URL", name: "github", widget: "string" }
-          - { label: "LinkedIn URL", name: "linkedin", widget: "string" }
-          - label: "Skills"
-            name: "skills"
-            widget: "list"
-            field: { label: "Skill", name: "skill", widget: "string" }
+          - label: "Primary Color"
+            name: "primaryColor"
+            widget: "select"
+            options:
+              - { label: "⬛ Zinc (Neutral)", value: "zinc" }
+              - { label: "🟢 Emerald (Green)", value: "emerald" }
+              - { label: "🔵 Blue", value: "blue" }
+              - { label: "🟣 Violet", value: "violet" }
+              - { label: "🔴 Rose", value: "rose" }
+              - { label: "🟡 Amber", value: "amber" }
+              - { label: "🩵 Cyan", value: "cyan" }
+              - { label: "🟠 Orange", value: "orange" }
+          - label: "Font"
+            name: "font"
+            widget: "select"
+            options:
+              - { label: "Geist (Modern)", value: "geist" }
+              - { label: "Inter (Clean)", value: "inter" }
+              - { label: "DM Sans (Friendly)", value: "dm-sans" }
+              - { label: "Space Grotesk (Technical)", value: "space-grotesk" }
+          - label: "Border Radius"
+            name: "radius"
+            widget: "select"
+            options:
+              - { label: "None (Sharp)", value: "none" }
+              - { label: "Small", value: "small" }
+              - { label: "Medium", value: "medium" }
+              - { label: "Large (Rounded)", value: "large" }
+          - label: "Default Mode"
+            name: "defaultMode"
+            widget: "select"
+            options:
+              - { label: "Light", value: "light" }
+              - { label: "Dark", value: "dark" }
 
-      - name: "summary"
-        label: "Summary & Education"
-        file: "src/data/summary.json"
+      - name: "page-config"
+        label: "Page Layout"
+        file: "src/data/sections/page-config.json"
         fields:
-          - { label: "Summary Text", name: "summaryText", widget: "text" }
-          - { label: "Differentiator Label", name: "differentiatorLabel", widget: "string" }
-          - { label: "Differentiator Text", name: "differentiatorText", widget: "text" }
+          - label: "Sections"
+            name: "sections"
+            widget: "list"
+            fields:
+              - label: "Section ID"
+                name: "id"
+                widget: "select"
+                options:
+                  - { label: "Hero", value: "hero" }
+                  - { label: "About Me", value: "about" }
+                  - { label: "Skills", value: "skills" }
+                  - { label: "Experience", value: "experience" }
+                  - { label: "Projects", value: "projects" }
+                  - { label: "Testimonials", value: "testimonials" }
+                  - { label: "Contact", value: "contact" }
+              - { label: "Enabled", name: "enabled", widget: "boolean", default: true }
+              - { label: "Order", name: "order", widget: "number", value_type: "int", min: 1 }
+
+  # ──────────────────────────────
+  # Section Content
+  # ──────────────────────────────
+  - name: "sections"
+    label: "📄 Sections"
+    files:
+      - name: "hero"
+        label: "Hero Banner"
+        file: "src/data/sections/hero.json"
+        fields:
+          - { label: "Heading", name: "heading", widget: "string" }
+          - { label: "Subheading", name: "subheading", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "CTA Button Text", name: "ctaText", widget: "string" }
+          - { label: "CTA Button URL", name: "ctaUrl", widget: "string" }
+          - { label: "Secondary CTA Text", name: "secondaryCtaText", widget: "string", required: false }
+          - { label: "Secondary CTA URL", name: "secondaryCtaUrl", widget: "string", required: false }
+          - { label: "Show Badge", name: "showBadge", widget: "boolean", default: true }
+          - { label: "Badge Text", name: "badgeText", widget: "string", required: false }
+
+      - name: "about"
+        label: "About Me"
+        file: "src/data/sections/about.json"
+        fields:
+          - { label: "Section Title", name: "sectionTitle", widget: "string" }
+          - { label: "Bio", name: "bio", widget: "text" }
+          - label: "Highlights"
+            name: "highlights"
+            widget: "list"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Value", name: "value", widget: "string" }
+          - { label: "Differentiator Label", name: "differentiatorLabel", widget: "string", required: false }
+          - { label: "Differentiator Text", name: "differentiatorText", widget: "text", required: false }
           - label: "Education"
             name: "education"
             widget: "list"
@@ -43,6 +118,23 @@ collections:
                 name: "degrees"
                 widget: "list"
                 field: { label: "Degree", name: "degree", widget: "string" }
+
+      - name: "skills"
+        label: "Skills & Expertise"
+        file: "src/data/sections/skills.json"
+        fields:
+          - { label: "Section Title", name: "sectionTitle", widget: "string" }
+          - label: "Categories"
+            name: "categories"
+            widget: "list"
+            fields:
+              - { label: "Category Name", name: "name", widget: "string" }
+              - label: "Skills"
+                name: "skills"
+                widget: "list"
+                fields:
+                  - { label: "Skill Name", name: "name", widget: "string" }
+                  - { label: "Proficiency (%)", name: "level", widget: "number", value_type: "int", min: 0, max: 100 }
 
       - name: "experience"
         label: "Work Experience"
@@ -59,3 +151,53 @@ collections:
                 name: "points"
                 widget: "list"
                 field: { label: "Point", name: "point", widget: "text" }
+
+      - name: "projects"
+        label: "Projects"
+        file: "src/data/sections/projects.json"
+        fields:
+          - { label: "Section Title", name: "sectionTitle", widget: "string" }
+          - label: "Projects"
+            name: "projects"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Image", name: "image", widget: "image", required: false }
+              - label: "Tags"
+                name: "tags"
+                widget: "list"
+                field: { label: "Tag", name: "tag", widget: "string" }
+              - { label: "Live URL", name: "liveUrl", widget: "string", required: false }
+              - { label: "GitHub URL", name: "githubUrl", widget: "string", required: false }
+
+      - name: "testimonials"
+        label: "Testimonials"
+        file: "src/data/sections/testimonials.json"
+        fields:
+          - { label: "Section Title", name: "sectionTitle", widget: "string" }
+          - label: "Testimonials"
+            name: "testimonials"
+            widget: "list"
+            fields:
+              - { label: "Quote", name: "quote", widget: "text" }
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Role", name: "role", widget: "string" }
+              - { label: "Avatar", name: "avatar", widget: "image", required: false }
+
+      - name: "contact"
+        label: "Contact"
+        file: "src/data/sections/contact.json"
+        fields:
+          - { label: "Section Title", name: "sectionTitle", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Email", name: "email", widget: "string" }
+          - label: "Social Links"
+            name: "socialLinks"
+            widget: "list"
+            fields:
+              - label: "Platform"
+                name: "platform"
+                widget: "select"
+                options: ["GitHub", "LinkedIn", "Twitter", "YouTube", "Dribbble", "Behance"]
+              - { label: "URL", name: "url", widget: "string" }

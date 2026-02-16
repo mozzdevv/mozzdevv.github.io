@@ -1,0 +1,31 @@
+{
+    "sectionTitle": "Featured Projects",
+    "projects": [
+        {
+            "title": "Portfolio Website",
+            "description": "Modern Astro-powered portfolio with CMS integration, theme customization, and Bearnie UI components.",
+            "image": "",
+            "tags": [
+                "Astro",
+                "Tailwind CSS",
+                "Decap CMS",
+                "TypeScript"
+            ],
+            "liveUrl": "https://mozzdevv.github.io",
+            "githubUrl": "https://github.com/mozzdevv/mozzdevv.github.io"
+        },
+        {
+            "title": "AI Multi-Agent System",
+            "description": "Production-ready AI application leveraging multi-agent architecture with RAG models and generative AI integration.",
+            "image": "",
+            "tags": [
+                "Python",
+                "AI/ML",
+                "RAG",
+                "Multi-Agent"
+            ],
+            "liveUrl": "",
+            "githubUrl": ""
+        }
+    ]
+}

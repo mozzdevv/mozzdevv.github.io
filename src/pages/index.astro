@@ -1,21 +1,34 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import Sidebar from '@/components/portfolio/Sidebar.astro';
-import Summary from '@/components/portfolio/Summary.astro';
-import Experience from '@/components/portfolio/Experience.astro';
+import HeroSection from '@/components/sections/HeroSection.astro';
+import AboutSection from '@/components/sections/AboutSection.astro';
+import SkillsSection from '@/components/sections/SkillsSection.astro';
+import ExperienceSection from '@/components/sections/ExperienceSection.astro';
+import ProjectsSection from '@/components/sections/ProjectsSection.astro';
+import TestimonialsSection from '@/components/sections/TestimonialsSection.astro';
+import ContactSection from '@/components/sections/ContactSection.astro';
+import pageConfig from '@/data/sections/page-config.json';
+
+// Map section IDs to components
+const sectionComponents: Record<string, any> = {
+  hero: HeroSection,
+  about: AboutSection,
+  skills: SkillsSection,
+  experience: ExperienceSection,
+  projects: ProjectsSection,
+  testimonials: TestimonialsSection,
+  contact: ContactSection,
+};
+
+// Filter and sort enabled sections
+const enabledSections = pageConfig.sections
+  .filter((s: { enabled: boolean }) => s.enabled)
+  .sort((a: { order: number }, b: { order: number }) => a.order - b.order);
 ---
 
-<BaseLayout showNavigation={false} showFooter={false}>
-  <div class="flex flex-col lg:flex-row min-h-screen">
-    <!-- Sidebar -->
-    <aside class="lg:w-[35%] lg:fixed lg:top-0 lg:left-0 lg:h-screen p-10 lg:p-14 flex flex-col border-b lg:border-b-0 lg:border-r border-border bg-muted overflow-y-auto">
-      <Sidebar />
-    </aside>
-
-    <!-- Main Content -->
-    <main class="lg:w-[65%] lg:ml-[35%] p-10 lg:p-14 lg:py-20 overflow-y-auto">
-      <Summary />
-      <Experience />
-    </main>
-  </div>
+<BaseLayout showNavigation={true} showFooter={true}>
+  {enabledSections.map((section: { id: string }) => {
+    const Component = sectionComponents[section.id];
+    return Component ? <Component /> : null;
+  })}
 </BaseLayout>

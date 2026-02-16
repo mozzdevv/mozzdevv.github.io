@@ -1,0 +1,47 @@
+---
+import Badge from "@/components/ui/badge/Badge.astro";
+import Button from "@/components/ui/button/Button.astro";
+import heroData from "@/data/sections/hero.json";
+---
+
+<section id="hero" class="relative overflow-hidden py-24 sm:py-32 lg:py-40">
+  <div class="mx-auto max-w-4xl px-6 lg:px-8 text-center">
+    {heroData.showBadge && heroData.badgeText && (
+      <div class="mb-8 flex justify-center">
+        <Badge variant="secondary" class="px-4 py-1.5 text-sm font-medium">
+          {heroData.badgeText}
+        </Badge>
+      </div>
+    )}
+
+    <h1 class="text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl text-foreground">
+      {heroData.heading}
+    </h1>
+
+    <p class="mt-4 text-xl sm:text-2xl font-medium text-primary">
+      {heroData.subheading}
+    </p>
+
+    <p class="mt-6 text-lg leading-8 text-muted-foreground max-w-2xl mx-auto">
+      {heroData.description}
+    </p>
+
+    <div class="mt-10 flex items-center justify-center gap-4 flex-wrap">
+      {heroData.ctaText && (
+        <Button href={heroData.ctaUrl} size="lg">
+          {heroData.ctaText}
+        </Button>
+      )}
+      {heroData.secondaryCtaText && (
+        <Button href={heroData.secondaryCtaUrl} variant="outline" size="lg">
+          {heroData.secondaryCtaText}
+        </Button>
+      )}
+    </div>
+  </div>
+
+  <!-- Decorative gradient background -->
+  <div class="absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
+    <div class="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-primary/5 blur-3xl"></div>
+  </div>
+</section>
