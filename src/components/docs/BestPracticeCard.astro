@@ -1,0 +1,81 @@
+---
+import { cn } from "@/utils/cn";
+// Fundations
+import Text from "@/components/fundations/elements/Text.astro";
+// Icons
+import X from "@lucide/astro/icons/x";
+import Check from "@lucide/astro/icons/check";
+import Info from "@lucide/astro/icons/info";
+import TriangleAlert from "@lucide/astro/icons/triangle-alert";
+
+const { title, variant = "info", class: className, ...props } = Astro.props;
+const variants = {
+  do: {
+    title: "Do",
+    icon: Check,
+    card: "bg-success/5",
+    text: "text-success",
+  },
+  dont: {
+    title: "Don't",
+    icon: X,
+    card: "bg-destructive/5",
+    text: "text-destructive",
+  },
+  success: {
+    title: "Success",
+    icon: Check,
+    card: "bg-success/5",
+    text: "text-success",
+  },
+  danger: {
+    title: "Danger",
+    icon: X,
+    card: "bg-destructive/5",
+    text: "text-destructive",
+  },
+  info: {
+    title: "Info",
+    icon: Info,
+    card: "bg-info/5",
+    text: "text-info",
+  },
+  warning: {
+    title: "Warning",
+    icon: TriangleAlert,
+    card: "bg-warning/5",
+    text: "text-warning",
+  },
+  alert: {
+    title: "Alert",
+    icon: TriangleAlert,
+    card: "bg-warning/5",
+    text: "text-warning",
+  },
+};
+
+const variantKey = Object.prototype.hasOwnProperty.call(variants, variant)
+  ? variant
+  : "info";
+const variantConfig = variants[variantKey];
+const Icon = variantConfig.icon;
+const heading = title ?? variantConfig.title;
+
+const classes = cn(
+  "rounded-lg  p-4 space-y-3",
+  variantConfig.card,
+  className
+);
+const titleClasses = cn(
+  "font-medium flex items-center gap-2",
+  variantConfig.text
+);
+---
+
+<div class={classes} {...props}>
+  <Text tag="h3" class={titleClasses}>
+    <Icon size={16} />
+    {heading}
+  </Text>
+  <slot />
+</div>

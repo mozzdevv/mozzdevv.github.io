@@ -1,0 +1,36 @@
+---
+import { cn } from '@/utils/cn';
+import type { HTMLAttributes } from 'astro/types';
+import Folder from "@lucide/astro/icons/folder";
+import FolderOpen from "@lucide/astro/icons/folder-open";
+
+export interface Props extends HTMLAttributes<'button'> {
+  /** Show folder icons that change based on state */
+  showFolderIcon?: boolean;
+}
+
+const { showFolderIcon = true, class: className, ...props } = Astro.props;
+
+const classes = cn(
+  'inline-flex shrink-0 items-center justify-center rounded-sm',
+  'hover:bg-accent',
+  className
+);
+---
+
+<button
+  type="button"
+  class={classes}
+  data-tree-item-trigger
+  aria-expanded="false"
+  {...props}
+>
+  <slot>
+    {showFolderIcon && (
+      <>
+        <Folder class="size-4" data-folder-closed />
+        <FolderOpen class="size-4 hidden" data-folder-open />
+      </>
+    )}
+  </slot>
+</button>
