@@ -1,11 +1,11 @@
 {
-    "heading": "Mazin Osman",
-    "subheading": "Sr. Digital Project & Program Management",
-    "description": "10+ years delivering complex digital projects for Microsoft, Morgan Stanley, Allergan, and government clients. Building the future with AI.",
-    "ctaText": "Get in Touch",
-    "ctaUrl": "#contact",
-    "secondaryCtaText": "View Projects",
-    "secondaryCtaUrl": "#projects",
-    "showBadge": true,
-    "badgeText": "Available for opportunities"
+  "heading": "Mazin Osman",
+  "subheading": "Sr. Digital Project & Program Management",
+  "showBadge": true,
+  "secondaryCtaText": "View Projects",
+  "badgeText": "",
+  "secondaryCtaUrl": "#projects",
+  "description": "10+ years delivering complex, high visibility digital projects for Microsoft, Morgan Stanley, Allergan Aesthetics, McDonald's Canada and government entities. Building the future with AI.",
+  "ctaText": "Get in Touch",
+  "ctaUrl": "#contact"
 }
