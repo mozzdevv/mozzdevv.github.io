@@ -1,28 +1,30 @@
 {
-  "sectionTitle": "Writings",
-  "description": "Thoughts on project management, AI, and digital transformation.",
-  "posts": [
-    {
-      "title": "Building PMO Operations from Scratch",
-      "excerpt": "Lessons learned from establishing Agile PMO frameworks for enterprise digital transformation teams.Lessons learned from establishing Agile PMO frameworks for enterprise digital transformation teams.Lessons learned from establishing Agile PMO frameworks for enterprise digital transformation teams.Lessons learned from establishing Agile PMO frameworks for enterprise digital transformation teams.Lessons learned from establishing Agile PMO frameworks for enterprise digital transformation teams.Lessons learned from establishing Agile PMO frameworks for enterprise digital transformation teams.Lessons learned from establishing Agile PMO frameworks for enterprise digital transformation teams.Lessons learned from establishing Agile PMO frameworks for enterprise digital transformation teams.Lessons learned from establishing Agile PMO frameworks for enterprise digital transformation teams.Lessons learned from establishing Agile PMO frameworks for enterprise digital transformation teams.Lessons learned from establishing Agile PMO frameworks for enterprise digital transformation teams.Lessons learned from establishing Agile PMO frameworks for enterprise digital transformation teams.Lessons learned from establishing Agile PMO frameworks for enterprise digital transformation teams.Lessons learned from establishing Agile PMO frameworks for enterprise digital transformation teams.Lessons learned from establishing Agile PMO frameworks for enterprise digital transformation teams.Lessons learned from establishing Agile PMO frameworks for enterprise digital transformation teams.Lessons learned from establishing Agile PMO frameworks for enterprise digital transformation teams.Lessons learned from establishing Agile PMO frameworks for enterprise digital transformation teams.Lessons learned from establishing Agile PMO frameworks for enterprise digital transformation teams.Lessons learned from establishing Agile PMO frameworks for enterprise digital transformation teams.Lessons learned from establishing Agile PMO frameworks for enterprise digital transformation teams.Lessons learned from establishing Agile PMO frameworks for enterprise digital transformation teams.Lessons learned from establishing Agile PMO frameworks for enterprise digital transformation teams.Lessons learned from establishing Agile PMO frameworks for enterprise digital transformation teams.",
-      "date": "2026-02-15",
-      "tags": [
-        "Project Management",
-        "Agile"
-      ],
-      "slug": "building-pmo-operations",
-      "published": true
-    },
-    {
-      "title": "The Future of AI in Project Management",
-      "excerpt": "How multi-agent AI systems are reshaping how we plan, execute, and deliver complex digital projects.",
-      "date": "2026-02-10",
-      "tags": [
-        "AI",
-        "Project Management"
-      ],
-      "slug": "ai-in-project-management",
-      "published": true
-    }
-  ]
+    "sectionTitle": "Writings",
+    "description": "Thoughts on project management, AI, and digital transformation.",
+    "posts": [
+        {
+            "title": "Building PMO Operations from Scratch",
+            "excerpt": "Lessons learned from establishing Agile PMO frameworks for enterprise digital transformation teams.",
+            "date": "2026-02-15",
+            "tags": [
+                "Project Management",
+                "Agile"
+            ],
+            "slug": "building-pmo-operations",
+            "published": true,
+            "body": "## The Challenge\n\nWhen I joined Allergan Aesthetics, there was no formal PMO in place. Digital projects were managed ad-hoc across 6 departments with 23 stakeholders, each with their own workflow and priorities.\n\n## Building the Foundation\n\nThe first step was establishing a **governance framework** that felt lightweight enough for teams to adopt, yet robust enough to provide visibility to leadership.\n\n### Key Principles\n\n- **Start small, scale fast** — We began with a single pilot team before rolling out across all departments\n- **Tool-agnostic processes** — The framework works regardless of whether teams use JIRA, Azure DevOps, or Asana\n- **Data-driven decisions** — Every process was designed to generate actionable metrics\n\n## Results\n\nWithin 18 months, we were managing a portfolio of **93 cross-functional projects** with:\n\n1. 40% reduction in project delivery times\n2. 70% improvement in stakeholder response times\n3. Clear visibility into resource allocation across all departments\n\n> The key insight: PMO success isn't about enforcing rigid processes — it's about creating a shared language for how work gets done.\n\n## Lessons Learned\n\nThe biggest lesson? **Change management is harder than project management.** Getting teams to adopt new processes requires empathy, patience, and relentless communication."
+        },
+        {
+            "title": "The Future of AI in Project Management",
+            "excerpt": "How multi-agent AI systems are reshaping how we plan, execute, and deliver complex digital projects.",
+            "date": "2026-02-10",
+            "tags": [
+                "AI",
+                "Project Management"
+            ],
+            "slug": "ai-in-project-management",
+            "published": true,
+            "body": "## The Shift is Happening\n\nAI is no longer a buzzword in project management — it's becoming an essential tool. From automated risk assessment to intelligent resource allocation, AI is fundamentally changing how we deliver projects.\n\n## Multi-Agent Systems\n\nThe most exciting development is **multi-agent AI systems** — architectures where multiple specialized AI agents collaborate on complex tasks:\n\n- **Planning Agent** — Analyzes historical data to create realistic project timelines\n- **Risk Agent** — Continuously monitors project health and flags potential issues\n- **Communication Agent** — Drafts status reports and stakeholder updates\n\n### How They Work Together\n\nThese agents don't operate in isolation. They share context, challenge each other's assumptions, and produce outputs that are more nuanced than any single AI could achieve.\n\n## Practical Applications Today\n\nYou don't need to wait for the future to benefit from AI in PM:\n\n1. **Sprint planning** — Use AI to analyze velocity data and suggest realistic commitments\n2. **Risk identification** — Train models on your historical project data to predict common failure patterns\n3. **Status reporting** — Automate the collection and summarization of project metrics\n\n## The Human Element\n\n> AI won't replace project managers. But project managers who use AI will replace those who don't.\n\nThe most important skill for modern PMs isn't technical — it's the ability to **translate between human needs and AI capabilities**."
+        }
+    ]
 }

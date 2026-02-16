@@ -27,6 +27,7 @@
     "html-to-image": "^1.11.13",
     "jszip": "^3.10.1",
     "keen-slider": "^6.8.6",
+    "marked": "^17.0.2",
     "reading-time": "^1.5.0",
     "shiki": "^3.22.0",
     "tailwind-merge": "^3.4.0",
