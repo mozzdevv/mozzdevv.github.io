@@ -1,26 +1,31 @@
 ---
+import summaryData from '@/data/summary.json';
+const { summaryText, differentiatorLabel, differentiatorText, education } = summaryData;
 ---
 <section class="mb-16">
-  <span class="text-xs font-bold uppercase tracking-widest opacity-60 mb-10 block border-b border-zinc-900 dark:border-white pb-2 w-24">Summary</span>
+  <span class="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-10 block border-b border-border pb-2 w-24">Summary</span>
   
   <div class="mb-10">
     <p class="text-xl leading-relaxed mb-5 font-light">
-      Seasoned Sr. Project Manager with 10+ years delivering complex digital projects for Microsoft, Morgan Stanley, Allergan, and government clients. Proven track record building PMO operations from scratch, managing distributed teams across 5 time zones, and delivering on-time, on-budget results.
+      {summaryText}
     </p>
-    <p class="text-lg leading-relaxed opacity-90 font-light">
-      <strong>Unique Differentiator:</strong> Active hands-on expertise in <span class="border-b-2 border-zinc-500 dark:border-zinc-400">AI multi-agent systems</span>, generative AI integration, RAG models, and production-ready AI application development.
+    <p class="text-lg leading-relaxed text-muted-foreground font-light">
+      <strong class="text-foreground">{differentiatorLabel}</strong> {differentiatorText}
     </p>
   </div>
 </section>
 
 <section class="mb-16">
-  <span class="text-xs font-bold uppercase tracking-widest opacity-60 mb-10 block border-b border-zinc-900 dark:border-white pb-2 w-24">Education</span>
+  <span class="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-10 block border-b border-border pb-2 w-24">Education</span>
   
-  <div class="mb-4">
-    <div class="text-2xl font-semibold mb-2">University of Toronto</div>
-    <ul class="list-none pl-0 space-y-2 opacity-90 font-light">
-      <li class="relative pl-5 before:content-['—'] before:absolute before:left-0 before:opacity-50">Digital Strategy & Communications Management Cert.</li>
-      <li class="relative pl-5 before:content-['—'] before:absolute before:left-0 before:opacity-50">Bachelor of Arts (Honours), Sociology & Philosophy.</li>
-    </ul>
-  </div>
+  {education.map(edu => (
+    <div class="mb-4">
+      <div class="text-2xl font-semibold mb-2">{edu.institution}</div>
+      <ul class="list-none pl-0 space-y-2 text-muted-foreground font-light">
+        {edu.degrees.map(degree => (
+          <li class="relative pl-5 before:content-['—'] before:absolute before:left-0 before:opacity-50">{degree}</li>
+        ))}
+      </ul>
+    </div>
+  ))}
 </section>

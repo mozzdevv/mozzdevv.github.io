@@ -1,0 +1,60 @@
+backend:
+  name: github
+  repo: mozzdevv/mozzdevv.github.io
+  branch: main
+
+media_folder: "public/images"
+public_folder: "/images"
+
+collections:
+  - name: "portfolio"
+    label: "Portfolio Data"
+    files:
+      - name: "profile"
+        label: "Profile & Contact"
+        file: "src/data/profile.json"
+        fields:
+          - { label: "Name", name: "name", widget: "string" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Years Active", name: "years", widget: "string" }
+          - { label: "Location", name: "location", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "GitHub URL", name: "github", widget: "string" }
+          - { label: "LinkedIn URL", name: "linkedin", widget: "string" }
+          - label: "Skills"
+            name: "skills"
+            widget: "list"
+            field: { label: "Skill", name: "skill", widget: "string" }
+
+      - name: "summary"
+        label: "Summary & Education"
+        file: "src/data/summary.json"
+        fields:
+          - { label: "Summary Text", name: "summaryText", widget: "text" }
+          - { label: "Differentiator Label", name: "differentiatorLabel", widget: "string" }
+          - { label: "Differentiator Text", name: "differentiatorText", widget: "text" }
+          - label: "Education"
+            name: "education"
+            widget: "list"
+            fields:
+              - { label: "Institution", name: "institution", widget: "string" }
+              - label: "Degrees"
+                name: "degrees"
+                widget: "list"
+                field: { label: "Degree", name: "degree", widget: "string" }
+
+      - name: "experience"
+        label: "Work Experience"
+        file: "src/data/experience.json"
+        fields:
+          - label: "Jobs"
+            name: "jobs"
+            widget: "list"
+            fields:
+              - { label: "Role", name: "role", widget: "string" }
+              - { label: "Company", name: "company", widget: "string" }
+              - { label: "Period", name: "period", widget: "string" }
+              - label: "Key Points"
+                name: "points"
+                widget: "list"
+                field: { label: "Point", name: "point", widget: "text" }

@@ -1,26 +1,22 @@
 ---
-// Sidebar.astro
-const skills = [
-  "JIRA / Azure DevOps", "Power BI", "SQL / MySQL", "HTML5 / CSS",
-  "Salesforce (SFMC)", "React / .NET", "Google Analytics 4",
-  "AEM / Sitecore", "Figma / Sketch", "AI Multi-Agent Systems"
-];
-
-// Icons provided by libraries or SVGs. Using simple text/SVG for now to avoid dependency hell if react-icons isn't setup
+import profileData from '@/data/profile.json';
+const { name, title, years, location, email, github, linkedin, skills } = profileData;
+const nameParts = name.split(' ');
+const titleLines = title.split('\n');
 ---
 
 <div class="absolute top-10 right-10">
-  <button id="theme-toggle" class="border border-zinc-900 dark:border-white px-5 py-2 rounded-full text-xs uppercase tracking-widest hover:bg-zinc-900 hover:text-white dark:hover:bg-white dark:hover:text-zinc-900 transition-colors">
+  <button id="theme-toggle" class="border border-border px-5 py-2 rounded-full text-xs uppercase tracking-widest hover:bg-foreground hover:text-background transition-colors">
     Toggle Theme
   </button>
 </div>
 
 <!-- Skills -->
 <div class="mt-10">
-  <div class="text-xs font-bold uppercase tracking-widest opacity-60 mb-5">Tech Stack</div>
+  <div class="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-5">Tech Stack</div>
   <div class="flex flex-wrap gap-2">
     {skills.map(skill => (
-      <span class="text-xs border border-zinc-900 dark:border-white px-2 py-1 opacity-70 cursor-default hover:bg-zinc-900 hover:text-white dark:hover:bg-white dark:hover:text-zinc-900 transition-colors">
+      <span class="text-xs border border-border px-2 py-1 text-muted-foreground cursor-default hover:bg-foreground hover:text-background transition-colors">
         {skill}
       </span>
     ))}
@@ -28,19 +24,27 @@ const skills = [
 </div>
 
 <!-- Bottom Info -->
-<div class="mt-auto pt-10 border-t border-zinc-900 dark:border-white">
+<div class="mt-auto pt-10 border-t border-border">
   <div class="mb-10">
-    <h1 class="text-4xl font-bold uppercase tracking-[0.2em] leading-tight mb-2">Mazin<br/>Osman</h1>
-    <h2 class="text-sm uppercase tracking-wider font-normal leading-relaxed">Sr. Digital Project &<br/>Program Management</h2>
-    <h2 class="text-sm uppercase tracking-wider font-normal mt-1">2013 - 2026</h2>
+    <h1 class="text-4xl font-bold uppercase tracking-[0.2em] leading-tight mb-2">
+      {nameParts.map((part, i) => (
+        <Fragment>
+          {part}{i < nameParts.length - 1 && <br/>}
+        </Fragment>
+      ))}
+    </h1>
+    {titleLines.map(line => (
+      <h2 class="text-sm uppercase tracking-wider font-normal leading-relaxed">{line}</h2>
+    ))}
+    <h2 class="text-sm uppercase tracking-wider font-normal mt-1">{years}</h2>
   </div>
 
-  <div class="text-sm leading-loose opacity-80">
-    <p>Toronto, Ontario</p>
-    <p><a href="mailto:mazin@example.com" class="hover:underline">mazin@example.com</a></p>
+  <div class="text-sm leading-loose text-muted-foreground">
+    <p>{location}</p>
+    <p><a href={`mailto:${email}`} class="hover:underline hover:text-foreground transition-colors">{email}</a></p>
     <div class="flex gap-4 mt-2">
-       <a href="https://github.com/mozzdevv" target="_blank" class="hover:underline flex items-center gap-1">GitHub</a>
-       <a href="https://linkedin.com/in/mozzdevv" target="_blank" class="hover:underline flex items-center gap-1">LinkedIn</a>
+       <a href={github} target="_blank" class="hover:underline hover:text-foreground transition-colors flex items-center gap-1">GitHub</a>
+       <a href={linkedin} target="_blank" class="hover:underline hover:text-foreground transition-colors flex items-center gap-1">LinkedIn</a>
     </div>
   </div>
 </div>

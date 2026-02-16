@@ -1,65 +1,17 @@
 ---
-const jobs = [
-    {
-      role: "Sr. Digital & Creative Project Manager",
-      company: "ClearCut Digital / Microsoft",
-      period: "Oct 2022 - Present",
-      points: [
-        "Delivered 3 high-profile custom WordPress sites (Sustainability, Responsible AI, Cybersecurity) for Microsoft within 9-week sprints, coordinating global teams across 5 time zones.",
-        "Established comprehensive program and project governance, PMO frameworks, and backlog management via Azure DevOps.",
-        "Served as liaison between Microsoft C-suite and technical teams, rapidly translating strategic requirements into specs."
-      ]
-    },
-    {
-      role: "Digital/IT PMO & Omnichannel Analytics Manager",
-      company: "Allergan Aesthetics (AbbVie)",
-      period: "Jun 2019 - Oct 2022",
-      points: [
-        "Established the Digital Transformation department and Agile PMO from scratch for 23 stakeholders across 6 departments.",
-        "Managed a portfolio of 93 cross-functional projects (Salesforce, Sitecore, AEM, React, Mobile Apps).",
-        "Pioneered the launch of \"Brilliant Distinctions\" rewards program, generating $20M+ revenue in two years.",
-        "Analyzed 5,000+ customer records via SQL & Power BI, reducing response times by 70%."
-      ]
-    },
-    {
-      role: "Digital Manager",
-      company: "KPDi Inc",
-      period: "Mar 2017 - Feb 2018",
-      points: [
-        "Increased account revenue by 30% through strategic marketing proposals across 15+ projects.",
-        "Managed phased product roadmaps for mobile projects (React + Firebase) and 10+ website builds."
-      ]
-    },
-    {
-      role: "Digital Product Manager",
-      company: "Innovexa Solutions",
-      period: "Apr 2013 - Mar 2017",
-      points: [
-        "Co-managed Canada.ca web platform modernization for the federal government (35M+ residents).",
-        "Delivered ClimateKids.ca educational platform for Environment and Climate Change Canada."
-      ]
-    },
-    {
-      role: "Gen AI Evaluator & Prompt Engineer",
-      company: "Freelance (Remote)",
-      period: "Nov 2024 - Present",
-      points: [
-        "Evaluating and refining generative AI outputs across LLM platforms (GPT-4/5, Claude, Gemini).",
-        "Designing complex prompts to test capabilities, edge cases, and limitations."
-      ]
-    }
-];
+import experienceData from '@/data/experience.json';
+const { jobs } = experienceData;
 ---
 <section class="mb-16">
-  <span class="text-xs font-bold uppercase tracking-widest opacity-60 mb-10 block border-b border-zinc-900 dark:border-white pb-2 w-24">Experience</span>
+  <span class="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-10 block border-b border-border pb-2 w-24">Experience</span>
 
   {jobs.map((job) => (
     <div class="mb-16 last:mb-0">
       <div class="mb-4">
         <div class="text-2xl font-semibold mb-1 leading-tight">{job.role}</div>
-        <div class="font-mono text-sm opacity-80">{job.company} | {job.period}</div>
+        <div class="font-mono text-sm text-muted-foreground">{job.company} | {job.period}</div>
       </div>
-      <div class="opacity-90 font-light">
+      <div class="text-muted-foreground font-light">
         <ul class="list-none pl-0 space-y-3">
           {job.points.map((point) => (
             <li class="relative pl-5 before:content-['—'] before:absolute before:left-0 before:opacity-50 leading-relaxed text-base">
