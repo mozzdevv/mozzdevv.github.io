@@ -1,14 +1,14 @@
 {
   "sections": [
     {
-      "id": "blog",
-      "enabled": true,
-      "order": 2
-    },
-    {
       "id": "hero",
       "enabled": true,
       "order": 1
+    },
+    {
+      "id": "blog",
+      "enabled": true,
+      "order": 2
     },
     {
       "id": "about",
@@ -27,7 +27,7 @@
     },
     {
       "id": "projects",
-      "enabled": true,
+      "enabled": false,
       "order": 5
     },
     {
