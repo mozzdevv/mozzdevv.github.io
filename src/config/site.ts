@@ -1,27 +1,27 @@
 // Site configuration for SEO and JSON-LD schemas
 export const siteConfig = {
-  name: "Bearnie",
+  name: "Mazin Osman",
   description:
-    "A professional, accessible UI component library built with Astro, Tailwind CSS v4, and TypeScript.",
-  url: "https://bearnie.dev",
-  ogImage: "https://bearnie.dev/images/openGraph/facebook.png",
-  twitterImage: "https://bearnie.dev/images/openGraph/twitter.png",
+    "Sr. Digital Project & Program Manager — Portfolio. 10+ years delivering complex digital projects for Microsoft, Allergan, and government clients.",
+  url: "https://mozzdevv.github.io",
+  ogImage: "https://mozzdevv.github.io/images/openGraph/facebook.png",
+  twitterImage: "https://mozzdevv.github.io/images/openGraph/twitter.png",
   author: {
-    name: "Bearnie Team",
-    url: "https://bearnie.dev",
-    twitter: "@astroui",
+    name: "Mazin Osman",
+    url: "https://mozzdevv.github.io",
+    twitter: "@mozzdevv",
   },
   links: {
-    twitter: "https://twitter.com/mike_andreuzza",
-    github: "https://github.com/michael-andreuzza/bearnie",
+    twitter: "https://twitter.com/mozzdevv",
+    github: "https://github.com/mozzdevv",
   },
   // Organization info for JSON-LD
   organization: {
-    name: "Bearnie",
-    logo: "https://bearnie.dev/images/logos/symbol.svg",
+    name: "Mazin Osman",
+    logo: "https://mozzdevv.github.io/images/logos/symbol.svg",
     sameAs: [
-      "https://twitter.com/astroui",
-      "https://github.com/michael-andreuzza/bearnie",
+      "https://github.com/mozzdevv",
+      "https://linkedin.com/in/mozzdevv",
     ],
   },
 } as const;

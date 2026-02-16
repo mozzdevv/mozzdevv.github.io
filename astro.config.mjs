@@ -17,6 +17,6 @@ export default defineConfig({
       defaultColor: false,
     },
   },
-  site: "https://bearnie.dev",
+  site: "https://mozzdevv.github.io",
   integrations: [sitemap(), mdx()],
 });

@@ -1,95 +1,21 @@
 ---
-import { AstroSeo } from "@astrolib/seo";
-// Assets
-import Logo from "@/components/assets/Logo.astro";
-// Foundations
-import BaseLayout from "@/layouts/BaseLayout.astro";
-import Button from "@/components/ui/button/Button.astro";
-import Text from "@/components/fundations/elements/Text.astro";
-import Wrapper from "@/components/fundations/containers/Wrapper.astro";
-import { siteConfig } from "@/config/site";
-
-const canonical = `${siteConfig.url}${Astro.url.pathname === "/" ? "" : Astro.url.pathname}`;
+import SplitLayout from '@/layouts/SplitLayout.astro';
+import Sidebar from '@/components/portfolio/Sidebar.astro';
+import Summary from '@/components/portfolio/Summary.astro';
+import Experience from '@/components/portfolio/Experience.astro';
 ---
 
-<AstroSeo
-  title="Bearnie - Build your own component library"
-  description="A set of accessible components that you can customize, extend, and build on. Start here then make it your own. Open Source. Open Code. Use this to build your own component library."
-  canonical={canonical}
-  openGraph={{
-    url: canonical,
-    title: "Bearnie - Build Your Own Component Library",
-    description:
-      "A set of accessible components that you can customize, extend, and build on. Start here then make it your own. Open Source. Open Code. Use this to build your own component library.",
-    site_name: siteConfig.name,
-    type: "website",
-    locale: "en_US",
-    images: [
-      {
-        url: siteConfig.ogImage,
-        width: 1200,
-        height: 630,
-        alt: `${siteConfig.name} Open Graph image`,
-        type: "image/jpeg",
-      },
-    ],
-  }}
-  twitter={{
-    cardType: "summary_large_image",
-    site: siteConfig.author.twitter,
-    handle: siteConfig.author.twitter,
-  }}
-/>
-<BaseLayout
-  structuredData={{
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    name: siteConfig.name,
-    description:
-      "A set of accessible components that you can customize, extend, and build on. Start here then make it your own. Open Source. Open Code. Use this to build your own component library.",
-    url: siteConfig.url,
-    publisher: {
-      "@type": "Organization",
-      name: siteConfig.name,
-      url: siteConfig.url,
-      logo: {
-        "@type": "ImageObject",
-        url: siteConfig.ogImage,
-      },
-    },
-    sameAs: [siteConfig.author.twitter],
-  }}
->
-  <section>
-    <Wrapper
-      class="standard"
-      class="py-12 lg:h-[calc(100vh-11.5rem)] flex flex-col justify-center"
-    >
-      <!-- Hero Section -->
-      <div class="max-w-sm text-center mx-auto text-balance">
-        <Logo class="size-12 lg:size-20 mx-auto" />
-        <Text
-          tag="h1"
-          variant="textXL"
-          class="font-medium tracking-tight mt-12"
-        >
-          This is not a component library. <br /> This is your component library
-        </Text>
-        <Text tag="p" variant="textBase" class="text-muted-foreground mt-4">
-          Accessible components for Astro and Tailwind CSS. Components are
-          added to your project with the CLI. You own and control the code.
-        </Text>
+<SplitLayout title="Mazin Osman — Sr. Digital Project & Program Manager">
+  <div class="flex flex-col lg:flex-row min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-white font-sans">
+    <!-- Sidebar -->
+    <aside class="lg:w-[35%] lg:fixed lg:top-0 lg:left-0 lg:h-screen p-10 lg:p-14 flex flex-col border-b lg:border-b-0 lg:border-r border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900 overflow-y-auto">
+      <Sidebar />
+    </aside>
 
-        <div class="flex items-center gap-2.5 mt-12 justify-center">
-          <Button href="/docs" size="default">Get Started</Button>
-          <Button href="/docs/components" variant="outline" size="default"
-            >Browse Components</Button
-          >
-        </div>
-        <code class="mt-8 block text-xs text-muted-foreground font-mono">
-          npx bearnie init
-        </code>
-      </div>
-    </Wrapper>
-  </section>
-</BaseLayout>
+    <!-- Main Content -->
+    <main class="lg:w-[65%] lg:ml-[35%] p-10 lg:p-14 lg:py-20 overflow-y-auto">
+      <Summary />
+      <Experience />
+    </main>
+  </div>
+</SplitLayout>
